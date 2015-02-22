@@ -1,4 +1,4 @@
-﻿Public Class tab_Clases
+﻿Public Class ResumenTabs
     Dim con As New Conexion
     Dim USER As String = ""
     Dim STATUS As ToolStripStatusLabel
@@ -10,32 +10,33 @@
         InitializeComponent()
     End Sub
 
-    Private Sub Clase_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        loadTAB("Teoria")
+    Private Sub ResumenTabs_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        cargaFORM("0")
     End Sub
 
-    Sub loadTAB(ByVal Nombre As String)
+    Sub cargaFORM(ByVal n As String)
         Dim Form As Form
-        If Nombre.Equals("Teoria") Then
-            Form = New ClaseTeorica(USER, con, STATUS)
-            Form.TopLevel = False
+        If n.Equals("0") Then
+            Form = New ResumenDocente(USER, con, STATUS)
+            form.TopLevel = False
             TabControl1.TabPages(0).Controls.Add(Form)
-            Form.Show()
-        ElseIf Nombre.Equals("Practica") Then
-            Form = New ClasePractica(USER, con, STATUS)
+            form.Show()
+        ElseIf n.Equals("1") Then
+            Form = New ResumenCurso(USER, con, STATUS)
             Form.TopLevel = False
             TabControl1.TabPages(1).Controls.Add(Form)
             Form.Show()
+        ElseIf n.Equals("2") Then
+            Form = New ResumenAlumno(USER, con, STATUS)
+            Form.TopLevel = False
+            TabControl1.TabPages(2).Controls.Add(Form)
+            Form.Show()
         End If
     End Sub
 
 
+
     Private Sub TabControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged
-        Dim tab As Integer = TabControl1.SelectedIndex
-        If tab = 0 Then
-            loadTAB("Teoria")
-        ElseIf tab = 1 Then
-            loadTAB("Practica")
-        End If
+        cargaFORM(CStr(TabControl1.SelectedIndex))
     End Sub
 End Class
