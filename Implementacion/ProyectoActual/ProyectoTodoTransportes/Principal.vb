@@ -61,12 +61,12 @@
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
         ElseIf Nombre.Equals("Matrícula") Then
-            Form = New RegistrarMatricula(USER, con, ESTADO)
+            Form = New Matricula(USER, con, ESTADO)
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
         ElseIf Nombre.Equals("Profesores") Then
-            Form = New DocenteTabs(USER, con, ESTADO)
+            Form = New tab_Docente(USER, con, ESTADO)
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
@@ -76,7 +76,7 @@
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
         ElseIf Nombre.Equals("Vehículos") Then
-            Form = New newFlota(USER, con, ESTADO)
+            Form = New Vehiculos(USER, con, ESTADO)
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
@@ -85,8 +85,23 @@
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
-        ElseIf Nombre.Equals("Examenes") Then
+        ElseIf Nombre.Equals("Clases") Then
             Form = New newExamen(USER, con, ESTADO)
+            Form.TopLevel = False
+            Me.MainMenu.TabPages(tab).Controls.Add(Form)
+            Form.Show()
+        ElseIf Nombre.Equals("Examen Psicotecnico") Then
+            Form = New Psicotecnico(USER, con, ESTADO)
+            Form.TopLevel = False
+            Me.MainMenu.TabPages(tab).Controls.Add(Form)
+            Form.Show()
+        ElseIf Nombre.Equals("Examen Visual") Then
+            Form = New Visual(USER, con, ESTADO)
+            Form.TopLevel = False
+            Me.MainMenu.TabPages(tab).Controls.Add(Form)
+            Form.Show()
+        ElseIf Nombre.Equals("Examenes Escuela") Then
+            Form = New ExamenEscuela(USER, con, ESTADO)
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
@@ -95,8 +110,18 @@
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
+        ElseIf Nombre.Equals("Cambio Rueda") Then
+            Form = New CambioRueda(USER, con, ESTADO)
+            Form.TopLevel = False
+            Me.MainMenu.TabPages(tab).Controls.Add(Form)
+            Form.Show()
+        ElseIf Nombre.Equals("Horarios") Then
+            Form = New Horarios(USER, con, ESTADO)
+            Form.TopLevel = False
+            Me.MainMenu.TabPages(tab).Controls.Add(Form)
+            Form.Show()
         ElseIf Nombre.Equals("Resumen") Then
-            Form = New ResumenTabs(USER, con, ESTADO)
+            Form = New tab_resumen(USER, con, ESTADO)
             Form.TopLevel = False
             Me.MainMenu.TabPages(tab).Controls.Add(Form)
             Form.Show()
@@ -104,4 +129,7 @@
 
     End Sub
 
+    Private Sub TabPage1_Click(sender As System.Object, e As System.EventArgs) Handles TabPage1.Click
+
+    End Sub
 End Class

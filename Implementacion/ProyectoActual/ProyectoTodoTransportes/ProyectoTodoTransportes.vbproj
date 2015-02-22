@@ -49,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\MySQL\Connector NET 6.8.3\Assemblies\v4.0\MySql.Data.dll</HintPath>
@@ -76,53 +79,73 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Asistencia.Designer.vb">
-      <DependentUpon>Asistencia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Asistencia.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Asistencias.Designer.vb">
-      <DependentUpon>Asistencias.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Asistencias.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Bienvenido.designer.vb">
       <DependentUpon>Bienvenido.vb</DependentUpon>
     </Compile>
     <Compile Include="Bienvenido.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CambioRueda.Designer.vb">
+      <DependentUpon>CambioRueda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CambioRueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomTextBoxClass.Designer.vb">
+      <DependentUpon>CustomTextBoxClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTextBoxClass.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataCBOX.vb" />
-    <Compile Include="Expresion.vb" />
+    <Compile Include="ExamenEscuela.Designer.vb">
+      <DependentUpon>ExamenEscuela.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExamenEscuela.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamenMunicipal.Designer.vb">
+      <DependentUpon>ExamenMunicipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExamenMunicipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamenPractico.Designer.vb">
+      <DependentUpon>ExamenPractico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExamenPractico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamenTeorico.Designer.vb">
+      <DependentUpon>ExamenTeorico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExamenTeorico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Horarios.Designer.vb">
       <DependentUpon>Horarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Horarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Matricula.Designer.vb">
+      <DependentUpon>Matricula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiColumnComboBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="NewAsistencia.Designer.vb">
-      <DependentUpon>NewAsistencia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NewAsistencia.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="newExamen.Designer.vb">
       <DependentUpon>newExamen.vb</DependentUpon>
     </Compile>
     <Compile Include="newExamen.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="newFlota.Designer.vb">
-      <DependentUpon>newFlota.vb</DependentUpon>
-    </Compile>
-    <Compile Include="newFlota.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Prueba.Designer.vb">
@@ -155,6 +178,33 @@
     <Compile Include="resGeneral.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="resProfesores.Designer.vb">
+      <DependentUpon>resProfesores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="resProfesores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuggestTextBoxClass.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="tab_Clases.Designer.vb">
+      <DependentUpon>tab_Clases.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tab_Clases.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClasePractica.Designer.vb">
+      <DependentUpon>ClasePractica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ClasePractica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaseTeorica.Designer.vb">
+      <DependentUpon>ClaseTeorica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ClaseTeorica.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conexion.vb" />
     <Compile Include="Curso.Designer.vb">
       <DependentUpon>Curso.vb</DependentUpon>
@@ -174,22 +224,16 @@
     <Compile Include="Encuesta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResumenAlumno.Designer.vb">
-      <DependentUpon>ResumenAlumno.vb</DependentUpon>
+    <Compile Include="editDocente.Designer.vb">
+      <DependentUpon>editDocente.vb</DependentUpon>
     </Compile>
-    <Compile Include="ResumenAlumno.vb">
+    <Compile Include="editDocente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResumenCurso.Designer.vb">
-      <DependentUpon>ResumenCurso.vb</DependentUpon>
+    <Compile Include="Examen.Designer.vb">
+      <DependentUpon>Examen.vb</DependentUpon>
     </Compile>
-    <Compile Include="ResumenCurso.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResumenDocente.Designer.vb">
-      <DependentUpon>ResumenDocente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ResumenDocente.vb">
+    <Compile Include="Examen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Funcionario.Designer.vb">
@@ -198,10 +242,10 @@
     <Compile Include="Funcionario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResumenTabs.Designer.vb">
-      <DependentUpon>ResumenTabs.vb</DependentUpon>
+    <Compile Include="Psicotecnico.Designer.vb">
+      <DependentUpon>Psicotecnico.vb</DependentUpon>
     </Compile>
-    <Compile Include="ResumenTabs.vb">
+    <Compile Include="Psicotecnico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tab_Config.Designer.vb">
@@ -210,10 +254,16 @@
     <Compile Include="tab_Config.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteTabs.Designer.vb">
-      <DependentUpon>DocenteTabs.vb</DependentUpon>
+    <Compile Include="tab_Docente.Designer.vb">
+      <DependentUpon>tab_Docente.vb</DependentUpon>
     </Compile>
-    <Compile Include="DocenteTabs.vb">
+    <Compile Include="tab_Docente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tab_resumen.Designer.vb">
+      <DependentUpon>tab_resumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tab_resumen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuarios.Designer.vb">
@@ -246,40 +296,46 @@
     <Compile Include="RegistrarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarMatricula.Designer.vb">
-      <DependentUpon>RegistrarMatricula.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrarMatricula.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Vehiculos.Designer.vb">
       <DependentUpon>Vehiculos.vb</DependentUpon>
     </Compile>
     <Compile Include="Vehiculos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Visual.Designer.vb">
+      <DependentUpon>Visual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visual.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Asistencia.resx">
-      <DependentUpon>Asistencia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Asistencias.resx">
-      <DependentUpon>Asistencias.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Bienvenido.resx">
       <DependentUpon>Bienvenido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambioRueda.resx">
+      <DependentUpon>CambioRueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamenEscuela.resx">
+      <DependentUpon>ExamenEscuela.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamenMunicipal.resx">
+      <DependentUpon>ExamenMunicipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamenPractico.resx">
+      <DependentUpon>ExamenPractico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamenTeorico.resx">
+      <DependentUpon>ExamenTeorico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Horarios.resx">
       <DependentUpon>Horarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewAsistencia.resx">
-      <DependentUpon>NewAsistencia.vb</DependentUpon>
+    <EmbeddedResource Include="Matricula.resx">
+      <DependentUpon>Matricula.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newExamen.resx">
       <DependentUpon>newExamen.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="newFlota.resx">
-      <DependentUpon>newFlota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
@@ -296,6 +352,18 @@
     <EmbeddedResource Include="resGeneral.resx">
       <DependentUpon>resGeneral.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="resProfesores.resx">
+      <DependentUpon>resProfesores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tab_Clases.resx">
+      <DependentUpon>tab_Clases.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClasePractica.resx">
+      <DependentUpon>ClasePractica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClaseTeorica.resx">
+      <DependentUpon>ClaseTeorica.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Curso.resx">
       <DependentUpon>Curso.vb</DependentUpon>
     </EmbeddedResource>
@@ -305,26 +373,26 @@
     <EmbeddedResource Include="Encuesta.resx">
       <DependentUpon>Encuesta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResumenAlumno.resx">
-      <DependentUpon>ResumenAlumno.vb</DependentUpon>
+    <EmbeddedResource Include="editDocente.resx">
+      <DependentUpon>editDocente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResumenCurso.resx">
-      <DependentUpon>ResumenCurso.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResumenDocente.resx">
-      <DependentUpon>ResumenDocente.vb</DependentUpon>
+    <EmbeddedResource Include="Examen.resx">
+      <DependentUpon>Examen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionario.resx">
       <DependentUpon>Funcionario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResumenTabs.resx">
-      <DependentUpon>ResumenTabs.vb</DependentUpon>
+    <EmbeddedResource Include="Psicotecnico.resx">
+      <DependentUpon>Psicotecnico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tab_Config.resx">
       <DependentUpon>tab_Config.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteTabs.resx">
-      <DependentUpon>DocenteTabs.vb</DependentUpon>
+    <EmbeddedResource Include="tab_Docente.resx">
+      <DependentUpon>tab_Docente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tab_resumen.resx">
+      <DependentUpon>tab_resumen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
@@ -341,11 +409,11 @@
     <EmbeddedResource Include="RegistrarCliente.resx">
       <DependentUpon>RegistrarCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarMatricula.resx">
-      <DependentUpon>RegistrarMatricula.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vehiculos.resx">
       <DependentUpon>Vehiculos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visual.resx">
+      <DependentUpon>Visual.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -412,21 +480,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\USER.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\CustomTxtBox\CustomTxtBox\CustomTxtBox.vbproj">
-      <Project>{EC26BFB7-669E-4380-8012-5C00F8A651D2}</Project>
-      <Name>CustomTxtBox</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\punto1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bandera1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\atras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

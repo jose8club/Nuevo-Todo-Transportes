@@ -2,14 +2,12 @@
     Dim con As New Conexion
     Dim USER As String = ""
     Dim STATUS As ToolStripStatusLabel
-    Dim dc As DataCBOX
-    Dim Data As DataTable
+    Dim items() As String
 
     Sub New(ByVal usuario As String, ByVal conexion As Conexion, ByVal estado As ToolStripStatusLabel)
         con = conexion
         USER = usuario
         STATUS = estado
-        dc = New DataCBOX(con)
         InitializeComponent()
     End Sub
 
@@ -24,33 +22,64 @@
 #Region "Metodos"
 
     Sub setItems()
-      
+        Dim aux2() As String
+        Dim aux1, n As Integer
         If check_instructores.Checked And check_profesores.Checked Then
-            Data = con.doQuery("SELECT Nombre, idFuncionario FROM Funcionario f, Docente d WHERE d.idDocente = f.idFuncionario AND Nombre LIKE '%" & TextBox1.Text & "%'")
+            n = con.countWhere("Funcionario", "Tipo = 'Docente'") - 1
+            items = con.toArrayWhere(n, "Nombre", "Funcionario", "Tipo = 'Docente'")
         ElseIf check_instructores.Checked Then
-            Data = con.doQuery("SELECT Nombre, idFuncionario FROM Funcionario f, Instructor i WHERE i.idInstructor = f.idFuncionario AND Nombre LIKE '%" & TextBox1.Text & "%'")
+            aux1 = con.countWhere("Docente", "Tipo = 'INS'") - 1
+            aux2 = con.toArrayWhere(aux1, "idDocente", "Docente", "Tipo = 'INS'")
+
+            Dim arreglo(aux1) As String
+            For i As Integer = 0 To aux1
+                arreglo(i) = con.selectWhereQuery("Nombre", "Funcionario", "idFuncionario = '" & aux2(i) & "'")
+            Next
+            items = arreglo
         ElseIf check_profesores.Checked Then
-            Data = con.doQuery("SELECT Nombre, idFuncionario FROM Funcionario f, Profesor p WHERE p.idProfesor = f.idFuncionario AND Nombre LIKE '%" & TextBox1.Text & "%'")
+            aux1 = con.countWhere("Docente", "Tipo = 'PRO'") - 1
+            aux2 = con.toArrayWhere(aux1, "idDocente", "Docente", "Tipo = 'PRO'")
+
+            Dim arreglo(aux1) As String
+            For i As Integer = 0 To aux1
+                arreglo(i) = con.selectWhereQuery("Nombre", "Funcionario", "idFuncionario = '" & aux2(i) & "'")
+            Next
+            items = arreglo
         Else
-            Data = Nothing
+            items = {}
         End If
 
     End Sub
 
     Sub cargaLIST(ByVal Nombre As String)
-        
-        If Nombre.Equals("Docente") Then
+        list_Docente.Items.Clear()
 
-            list_Docente.DataSource = Data
-            list_Docente.DisplayMember = "Nombre"
+        Dim n As Integer
+        If Nombre.Equals("Docente") Then
+            n = items.Length - 1
+            For i As Integer = 0 To n
+                list_Docente.Items.Add(items(i))
+            Next
+            If list_Docente.Items.Count > 0 Then list_Docente.SelectedIndex = 0
+
         End If
     End Sub
 
 #End Region
 
     Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
-        setItems()
-        cargaLIST("Docente")
+        list_Docente.Items.Clear()
+
+        Dim n As Integer = items.Length - 1
+        If TextBox1.Text = "" Then
+            For i As Integer = 0 To n
+                list_Docente.Items.Add(items(i))
+            Next
+            If list_Docente.Items.Count > 0 Then list_Docente.SelectedIndex = 0
+        Else
+            list_Docente.Items.AddRange(filtroContiene(items, TextBox1.Text))
+            If list_Docente.Items.Count > 0 Then list_Docente.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub check_instructores_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles check_instructores.CheckedChanged

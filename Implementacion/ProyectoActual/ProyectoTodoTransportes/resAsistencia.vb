@@ -55,16 +55,4 @@
         loadLista(cbox_estudiante.Text)
 
     End Sub
-
-    Private Sub btn_asteorica_Click(sender As System.Object, e As System.EventArgs) Handles btn_asteorica.Click
-        Dim asistencia As Asistencia = New Asistencia(USER, con, "Asistencia Teorica")
-        asistencia.Show()
-
-    End Sub
-
-    
-    Private Sub btn_aspractica_Click(sender As System.Object, e As System.EventArgs) Handles btn_aspractica.Click
-        Dim asistencia As Asistencia = New Asistencia(USER, con, "Asistencia Práctica")
-        asistencia.Show()
-    End Sub
 End Class
